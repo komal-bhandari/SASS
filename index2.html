@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>CSS Variables and Functions | COMP2081 Advanced Web User Interface Design</title>
+	<meta name="viewport" content="width=device-width" />
+	<style>
+		/* STEP 5: Use the CSS calc() function */
+		/* STEP 5a: Apply font-size to the :root pseudo-class of 150% */
+		/* STEP 5b: Add font-size to the H1 element - by adding 3vw to 1.5rem */
+		/* STEP 5c: Set the size of the MAIN text to the average of 5% of both the height and width of the viewport */
+
+		/* STEP 1: CSS custom properties (variables) */
+		/* STEP 1a: Use the :root pseudo class */
+			:root{
+				--main-color: darkorange;
+				font-size: 200%;
+			}
+		/* STEP 1b: Add a variable (-- is the prefix) for a commonly used value (color) */
+		/* STEP 2a: Add several selectors below that might use the above color (header, main, and footer) */
+			header {
+				background-color: var(--main-color);
+			}
+			header h1{
+				font-size: calc(1.5rem + 3vw);
+			}
+			main {
+				color: var(--main-color);
+				font-size: calc((5vw + 5vh) / 2);
+			}
+			footer{
+				border: 5px solid var(--main-color, red);
+			}
+
+
+		/* STEP 2b: set the background-color on the header to use the variable in STEP 1b with var() */
+		/* STEP 2c: Set the text color in the main element to also use the variable used in STEP 1b */
+		/* STEP 2d: Set the border on the footer element to also use the same variable color value */
+
+		/* STEP 3a: You can set a fallback value, if the variable is not set - on the footer rule above, add a comma, then another color inside the parentheses for the var() */
+		/* STEP 3b: Comment out the code that set the variable in the :root rule and refresh the browser page */
+		/* STEP 3c: Restore the variable declaration in the :root rule */
+	</style>
+</head>
+<body>
+	<header>
+		<h1>CSS Variables and Functions</h1>
+		<p>The evolution of CSS capabilities</p>
+	</header>
+	<main>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit lobortis dui, eu congue neque placerat in. Aliquam placerat porttitor lectus eu porta. Duis aliquet volutpat magna quis pharetra. Phasellus turpis dui, suscipit lacinia velit quis, hendrerit pellentesque nibh. Nunc sed leo sit amet dui ultricies lobortis ut id ex. Donec efficitur libero at fringilla tempor. Etiam sodales arcu vitae dui finibus tempor at venenatis nunc.</p>
+		<p>Cras sed suscipit nisi. Aenean commodo nunc eget tortor auctor bibendum. Ut posuere arcu velit, vel tincidunt lectus sagittis et. Pellentesque gravida luctus pharetra. In felis neque, feugiat at lacus eget, faucibus iaculis velit. Nullam tristique, justo eget blandit finibus, dui justo aliquam ligula, sit amet iaculis quam lectus sed ex. Sed ac mi ut ante mollis tristique. In sed nisl quis est sollicitudin varius non et velit. Sed turpis nunc, varius vitae iaculis ut, viverra eget neque.</p>
+		<!-- STEP 4: Inheritance - surround the below paragraph element with an ASIDE element, then refresh the page in the browser and notice that the text color holds the same color property value as its parent -->
+		<aside>
+			<p>Morbi vel ipsum id dolor rutrum lacinia. Praesent ullamcorper vulputate libero a vestibulum. Cras mollis mollis magna, ut mattis lacus convallis vel. Praesent accumsan, odio quis varius suscipit, nulla ante tincidunt nisl, non interdum quam eros nec nibh. Nulla eget dapibus metus, ac ultricies purus. Vestibulum et tristique felis. Nulla tempor, libero quis gravida suscipit, quam felis tempus metus, eu congue lectus orci a leo. Phasellus tincidunt nibh vel dolor vehicula viverra vitae ut metus.</p>
+		</aside>
+	</main>
+	<footer>
+		<p><small>© Copyright information goes here</small></p>
+	</footer>
+	<!-- For more about CSS custom properties (variables), see https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables -->
+</body>
+</html>
